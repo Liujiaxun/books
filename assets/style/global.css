@@ -474,6 +474,7 @@ body {
   background: #FF606D;
   display: flex;
   padding: 0 0.18rem;
+  z-index: 2;
 }
 
 .pageBars .pre, .pageBars .next {

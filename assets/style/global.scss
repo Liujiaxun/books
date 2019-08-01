@@ -349,6 +349,7 @@ body{
     background: $theme1;
     display: flex;
     padding:0 px2rem(36);
+    z-index:2;
     .pre,.next{
         flex:0 0 px2rem(120);
         @include center;

@@ -57,6 +57,10 @@ var fontSizeConfig = [
 var menustatus = false;
 var bookListStatus = false;
 $(function(){
+    if($('body').find('.pageBars').length === 1){
+        $('body').css({'paddingBottom':'.575rem'});
+        $('.loadList').css({'paddingBottom':'.575rem'});
+    }
     new Swiper ('#banner', {
         loop: true, // 循环模式选项
         // 如果需要分页器
