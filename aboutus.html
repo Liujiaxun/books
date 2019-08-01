@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>关于我们</title>
+    <link rel="stylesheet" href="./assets/style/swiper.min.css">
+    <link rel="stylesheet" href="./assets/style/global.min.css?v=11">
+    <script src='./assets/js/jq.js'></script>
+    <script src='./assets/js/swiper.js'></script>
+    <script src='./assets/common.js'></script>
+</head>
+
+<body>
+    <header class='header'>
+        <div class='headerMenu'>
+            <div class='menu' id='menuBtn' status="false">
+                <img src='./assets/img/menu.svg' alt='' />
+            </div>
+        </div>
+        <div class='headerLogo'>
+            <img src='./assets/img/logo.png' alt='' />
+        </div>
+        <div class='headerLoginBox'>
+            <div class='box'>
+                <span class='register' id='registerShowModal'>注册</span>
+                <span class='login' id='loginShowModal'>登录</span>
+            </div>
+        </div>
+        <div class='menuList' id='menuList'>
+            <div class='link'>
+                <a href='./index.html'> 首页 </a>
+            </div>
+            <div class='link'>
+                <a href='./book.html'> 小说区 </a>
+            </div>
+            <div class='link'>
+                <a href='./mappic.html'> 贴图区 </a>
+            </div>
+            <div class='link'>
+                <a href='./pic.html'> 漫画区 </a>
+            </div>
+            <div class='link'>
+                <a href='./contact.html'> 联系我们 </a>
+            </div>
+        </div>
+        <div class='back' id='back'></div>
+    </header>
+    <!-- ======================================================================================== -->
+    <div class='app-about'>
+        <div class="aboutBar">
+            <a href="#">关于我们</a>
+            <a href="javascript:;" id='Xy'>用户协议</a>
+            <a href="#Fw">服务</a>
+            <a href="#Lx">联系我们</a>
+        </div>
+        <div class='titleImg' id='AboutUs'>
+            <img src="./assets/img/title1.png" alt="">
+        </div>
+        <div class='info'>
+                面向中国同胞提供娱乐性丰富的网站，
+                网页版及APP完美兼容各种桌面设备（PC、MAC）及移动设备（iPhone、iPad、Android），界面设计友好、易用，上手度极高。采用多项最新尖端技术，向用户提供高清、流畅的日常娱乐体验；容量高达2PB的超大日常娱乐内容，涵盖电影、小说、漫画、贴图、老司机良心推荐及交流区；专业更新团队7*24小时不间断工作，保证全网更新最及时。
+                我们低俗但并不下流，我们作为网站内容定位精准的领先者，将致力于积极树立行业标准，引领日常娱乐行业格局及全媒时代的大格局。
+                <img src="./assets/img/title1b.png" alt="">
+        </div>
+        <div id='Xys'></div>
+        <div class='titleImg xy' >
+                <img src="./assets/img/title2.png" alt="">
+        </div>
+        <div class="info xy">
+            本站所有视频均收集引用于各大资源网站，本站只提供视频引用播放，不参与视频制作上传，不提供视频储存下载。
+            <img src="./assets/img/title2b.png" class='xy' alt="">
+
+        </div>
+        <div class='titleImg fw' id='Fw'>
+                <img src="./assets/img/title3.png" alt="">
+        </div>
+        <div class="fuinfo">
+            <p class='ggsj'> 广告/设计/开发服务请联系： </p>
+            <p class='email'> 邮箱： mantomanga.info@gmail.com</p>
+            <p class='wechat'> 微信号： </p>
+            <img src="./assets/img/title3b.png" alt="">
+
+        </div>
+        <div class='titleImg lx' id='Lx'>
+                <img src="./assets/img/title4.png" alt="">
+        </div>
+        <div class="fuinfo">
+            <p class='email'> mantomanga.info@gmail.com</p>
+            <p class='wechat'> Wechat: </p>
+            <img src="./assets/img/title4b.png" class='lx' alt="">
+        </div>
+        
+    </div>
+    <!-- ======================================================================================== -->
+    <div class='modal' id='registerModal' style="height:3rem;margin-top:-1.5rem">
+        <div class='modal-header'>
+            <img class='headerImg' src='./assets/img/register_header.png' alt='' />
+            <div class='close'>
+                <img src='./assets/img/close.svg' alt='close' />
+            </div>
+        </div>
+        <div class='modal-body first' id='register'>
+            <div class='form'>
+                <form>
+                    <div class='formItem'>
+                        <div class='formLable'>
+                            用户名:
+                        </div>
+                        <div class='formInput'>
+                            <input name='user' />
+                        </div>
+                    </div>
+                    <div class='formItem'>
+                        <div class='formLable'>
+                            密码:
+                        </div>
+                        <div class='formInput'>
+                            <input name='password' type='password' />
+                        </div>
+                    </div>
+                    <div class='formItem'>
+                        <div class='formLable'>
+                            确认密码:
+                        </div>
+                        <div class='formInput'>
+                            <input name='comfir_password' type='password' />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class='btn'>
+                <span class='btn-regis' id='registerBtn'>注册</span>
+                <span class='btn-has' id='hasAccout'>已有账号</span>
+            </div>
+        </div>
+        <div class='modal-body' id='registerSuccess'>
+            <div class='hintSpan'> 恭喜注册成功 </div>
+            <div class='btn'>
+                <span class='btn-regis'>登录</span>
+            </div>
+        </div>
+    </div>
+
+    <div class='modal' id='loginModal' style="height:2.5rem;margin-top:-1.5rem">
+        <div class='modal-header'>
+            <img class='headerImg' src='./assets/img/logins_header.png' alt='' />
+            <div class='close'>
+                <img src='./assets/img/close.svg' alt='close' />
+            </div>
+        </div>
+        <div class='modal-body first'>
+            <div class='form'>
+                <form>
+                    <div class='formItem'>
+                        <div class='formLable'>
+                            用户名:
+                        </div>
+                        <div class='formInput'>
+                            <input name='user' />
+                        </div>
+                    </div>
+                    <div class='formItem'>
+                        <div class='formLable'>
+                            密码:
+                        </div>
+                        <div class='formInput'>
+                            <input name='password' type='password' />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class='btn'>
+                <span class='btn-regis' id='loginBtn'>登录</span>
+                <span class='btn-has'>忘记密码</span>
+            </div>
+        </div>
+        <div class='modal-body' id='loginError'>
+            <div class='loginsSpan'>
+                <img src='./assets/img/login_error.png' alt='' />
+                <p class='span'>请点击任何一处重试或找回您的密码</p>
+                <span class='findPassword'> 忘记密码 </span>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $('#Xy').click(function(){
+        $('body,html').animate({'scrollTop':$('#Xys').offset().top - 100},100);
+    })
+</script>
+</html>

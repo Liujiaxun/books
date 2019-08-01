@@ -1,0 +1,51 @@
+@function px2rem($val){
+    @return ($val / 2) / 100 + rem;
+}
+
+@mixin flexs {
+    display: flex;
+    align-items:center;
+}
+@mixin center {
+    @include flexs();
+    justify-content: center;
+}
+@mixin left {
+    @include flexs();
+    align-items:flex-start;
+    justify-content: flex-start;
+}
+
+@mixin ov {
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; 
+    -webkit-box-orient: vertical;
+}
+@mixin overtext {
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+@mixin right {
+    @include flexs();
+    justify-content: flex-end;
+}
+@function calcRem($val){
+    @return calc(100%-$val) + rem 
+}
+
+
+
+$theme1:#FF606D;
+$theme2:#FF6A9F;
+
+$f14: px2rem(14);
+$f16: px2rem(16);
+$f18: px2rem(18);
+$padding: px2rem(36);
+$padding2: px2rem(24);
+$headerH: px2rem(115);
+

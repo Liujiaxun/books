@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>阅读页面</title>
+    <link rel="stylesheet" href="./assets/style/swiper.min.css">
+    <link rel="stylesheet" href="./assets/style/global.min.css?v=11">
+    <script src='./assets/js/jq.js'></script>
+    <script src='./assets/js/swiper.js'></script>
+    <script src='./assets/common.js'></script>
+</head>
+
+<body>
+    <header class='header'>
+        <div class='headerMenu'>
+            <div class='menu' id='menuBtn' status="false">
+                <img src='./assets/img/menu.svg' alt='' />
+            </div>
+        </div>
+        <div class='headerLogo'>
+            <img src='./assets/img/logo.png' alt='' />
+        </div>
+        <div class='headerLoginBox'>
+            <div class='box'>
+                <span class='register' id='registerShowModal'>注册</span>
+                <span class='login' id='loginShowModal'>登录</span>
+            </div>
+        </div>
+        <div class='menuList' id='menuList'>
+            <div class='link'>
+                <a href='./index.html'> 首页 </a>
+            </div>
+            <div class='link'>
+                <a href='./book.html'> 小说区 </a>
+            </div>
+            <div class='link'>
+                <a href='./mappic.html'> 贴图区 </a>
+            </div>
+            <div class='link'>
+                <a href='./pic.html'> 漫画区 </a>
+            </div>
+            <div class='link'>
+                <a href='./contact.html'> 联系我们 </a>
+            </div>
+        </div>
+        <div class='back' id='back'></div>
+    </header>
+    <!-- ======================================================================================== -->
+    <div class="books-show" style='padding-top:0;'>
+        <div class='books-bodys' id='books-bodys-shows'>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562585266277&di=b36ec8ae377999461c7d8ed972a18c57&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201511%2F29%2F20151129222447_B83WG.jpeg"/>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562585266277&di=b36ec8ae377999461c7d8ed972a18c57&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201511%2F29%2F20151129222447_B83WG.jpeg"/>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562585266277&di=b36ec8ae377999461c7d8ed972a18c57&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201511%2F29%2F20151129222447_B83WG.jpeg"/>
+        </div>
+        <div class="pages">
+            <div class="left">
+                <div class="pre">
+                    <div>
+                        <img src="./assets/img/pageleft.png" alt="">
+                        <p>上一章</p>
+                    </div>
+                </div>
+                <div class="pre">
+                    <div>
+                        <img src="./assets/img/pageleft2.png" alt="">
+                        <p>上一页</p>
+                    </div>
+                </div>
+            </div>
+            <div class="center">
+                <div class='ml'>
+                    目录
+                </div>
+            </div>
+            <div class="right">
+                <div class="next">
+                    <div>
+                        <img src="./assets/img/pageright2.png" alt="">
+                        <p>下一页</p>
+                    </div>
+                </div>
+                <div class="next">
+
+                    <div>
+                        <img src="./assets/img/pageright.png" alt="">
+                        <p>下一章</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ======================================================================================== -->
+    <div class='modal' id='registerModal' style="height:3rem;margin-top:-1.5rem">
+        <div class='modal-header'>
+            <img class='headerImg' src='./assets/img/register_header.png' alt='' />
+            <div class='close'>
+                <img src='./assets/img/close.svg' alt='close' />
+            </div>
+        </div>
+        <div class='modal-body first' id='register'>
+            <div class='form'>
+                <form>
+                    <div class='formItem'>
+                        <div class='formLable'>
+                            用户名:
+                        </div>
+                        <div class='formInput'>
+                            <input name='user' />
+                        </div>
+                    </div>
+                    <div class='formItem'>
+                        <div class='formLable'>
+                            密码:
+                        </div>
+                        <div class='formInput'>
+                            <input name='password' type='password' />
+                        </div>
+                    </div>
+                    <div class='formItem'>
+                        <div class='formLable'>
+                            确认密码:
+                        </div>
+                        <div class='formInput'>
+                            <input name='comfir_password' type='password' />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class='btn'>
+                <span class='btn-regis' id='registerBtn'>注册</span>
+                <span class='btn-has' id='hasAccout'>已有账号</span>
+            </div>
+        </div>
+        <div class='modal-body' id='registerSuccess'>
+            <div class='hintSpan'> 恭喜注册成功 </div>
+            <div class='btn'>
+                <span class='btn-regis'>登录</span>
+            </div>
+        </div>
+    </div>
+
+    <div class='modal' id='loginModal' style="height:2.5rem;margin-top:-1.5rem">
+        <div class='modal-header'>
+            <img class='headerImg' src='./assets/img/logins_header.png' alt='' />
+            <div class='close'>
+                <img src='./assets/img/close.svg' alt='close' />
+            </div>
+        </div>
+        <div class='modal-body first'>
+            <div class='form'>
+                <form>
+                    <div class='formItem'>
+                        <div class='formLable'>
+                            用户名:
+                        </div>
+                        <div class='formInput'>
+                            <input name='user' />
+                        </div>
+                    </div>
+                    <div class='formItem'>
+                        <div class='formLable'>
+                            密码:
+                        </div>
+                        <div class='formInput'>
+                            <input name='password' type='password' />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class='btn'>
+                <span class='btn-regis' id='loginBtn'>登录</span>
+                <span class='btn-has'>忘记密码</span>
+            </div>
+        </div>
+        <div class='modal-body' id='loginError'>
+            <div class='loginsSpan'>
+                <img src='./assets/img/login_error.png' alt='' />
+                <p class='span'>请点击任何一处重试或找回您的密码</p>
+                <span class='findPassword'> 忘记密码 </span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

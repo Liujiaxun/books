@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>阅读页面</title>
+    <link rel="stylesheet" href="./assets/style/swiper.min.css">
+    <link rel="stylesheet" href="./assets/style/global.min.css?v=11">
+    <script src='./assets/js/jq.js'></script>
+    <script src='./assets/js/swiper.js'></script>
+    <script src='./assets/common.js'></script>
+</head>
+
+<body>
+    <header class='header'>
+        <div class='headerMenu'>
+            <div class='menu' id='menuBtn' status="false">
+                <img src='./assets/img/menu.svg' alt='' />
+            </div>
+        </div>
+        <div class='headerLogo'>
+            <img src='./assets/img/logo.png' alt='' />
+        </div>
+        <div class='headerLoginBox'>
+            <div class='box'>
+                <span class='register' id='registerShowModal'>注册</span>
+                <span class='login' id='loginShowModal'>登录</span>
+            </div>
+        </div>
+        <div class='menuList' id='menuList'>
+            <div class='link'>
+                <a href='./index.html'> 首页 </a>
+            </div>
+            <div class='link'>
+                <a href='./book.html'> 小说区 </a>
+            </div>
+            <div class='link'>
+                <a href='./mappic.html'> 贴图区 </a>
+            </div>
+            <div class='link'>
+                <a href='./pic.html'> 漫画区 </a>
+            </div>
+            <div class='link'>
+                <a href='./contact.html'> 联系我们 </a>
+            </div>
+        </div>
+        <div class='back' id='back'></div>
+    </header>
+    <!-- ======================================================================================== -->
+    <div class="books-show">
+        <div class='fontSize-bar'>
+            <div class="left">
+                字体大小:
+            </div>
+            <div class="right">
+                <span class="big fontSizeSetting" type='1'>大</span>
+                <span class="med fontSizeSetting active" type='2'>中</span>
+                <span class="samll fontSizeSetting" type='3'>小</span>
+            </div>
+        </div>
+        <div class='books-bodys' id='books-bodys-shows'>
+            返回主页
+            Mr.韦淋 研发酒店系统多年
+            ==最全面最专业的 | 酒店预定系统 | | 旅游景区门票系统 | | 旅行社网站建设 | 企鹅:898397904==
+            AdF.ly -缩短网址、并且可赚钱！
+            通过分享你的链接就可赚钱！
+            首页
+            联系
+            管理
+            mac下配置nginx
+            nginx是一个高性能的HTTP和反向代理服务器，也是一个IMAP/POP3/SMTP服务器，下面我们来了解下nginx的用法。
+
+            安装nginx
+
+            使用brew安装nginx
+
+            brew install nginx
+            耐心等待nginx的安装，安装完成后我们就可以进行nginx的配置了。
+
+            配置nginx
+
+            mac下nginx的配置文件在：
+
+            /usr/local/etc/nginx/nginx.conf
+
+
+            打开nginx.conf，就可以做相关的配置了。
+            nginx配置详解：
+
+            复制代码
+            #定义Nginx运行的用户和用户组，来指定Nginx Worker进程运行用户以及用户组，默认由nobody账号运行
+            user ***;
+
+            #nginx进程数，建议设置为等于CPU总核心数。
+            worker_processes 4;
+
+            #全局错误日志定义类型，[ debug | info | notice | warn | error | crit ]，其中debug输出日志最为最详细，而crit输出日志最少
+            error_log logs/error.log info;
+
+            #进程文件，用来指定进程id的存储文件位置
+            pid logs/nginx.pid;
+
+            #一个nginx进程打开的最多文件描述符数目，理论值应该是最多打开文件数（系统的值ulimit -n）与nginx进程数相除，但是nginx分配请求并不均匀，所以建议与ulimit
+            -n的值保持一致，可以使用命令“ulimit -n 65535”来设置其他值。
+            worker_rlimit_nofile 4864;
+
+            #工作模式与连接数上限
+            events {
+            #参考事件模型，use [ kqueue | rtsig | epoll | /dev/poll | select | poll ]; epoll模型是Linux
+            2.6以上版本内核中的高性能网络I/O模型，如果跑在FreeBSD上面，就用kqueue模型。
+            use epoll; #mac平台用kqueue，对于Linux系统，epoll工作模式是首选
+            #worker_connections用于定义Nginx每个进程的最大连接数，即接收前端的最大请求数，默认是1024。最大客户端连接数由worker_processes和worker_connections决定，即Max_clients=worker_processes*worker_connections，在作为反向代理时，Max_clients变为：Max_clients
+            = worker_processes * worker_connections/4。 进程的最大连接数受Linux系统进程的最大打开文件数限制，在执行操作系统命令“ulimit -n
+            65536”后worker_connections的设置才能生效
+            worker_connections 1024;
+            }
+
+            #设定http服务器
+            http {
+            #来用设定文件的mime类型,类型在配置文件目录下的mime.type文件定义，来告诉nginx来识别文件类型。
+            include mime.types;
+            default_type application/octet-stream; #默认文件类型
+            #charset utf-8; #默认编码
+            #用于设置日志的格式，和记录哪些参数，这里设置为main，刚好用于access_log来纪录这种类型
+            #log_format main '$remote_addr - $remote_user [$time_local] "$request" '
+            #'$status $body_bytes_sent "$http_referer" '
+            #'"$http_user_agent" "$http_x_forwarded_for"';
+            sendfile on; #开启高效文件传输模式，sendfile指令指定nginx是否调用sendfile函数来输出文件，对于普通应用设为
+            on，如果用来进行下载等应用磁盘IO重负载应用，可设置为off，以平衡磁盘与网络I/O处理速度，降低系统的负载。注意：如果图片显示不正常把这个改成off。
+            autoindex on; #开启目录列表访问，合适下载服务器，默认关闭。
+            tcp_nopush on; #防止网络阻塞
+            tcp_nodelay on; #防止网络阻塞
+            keepalive_timeout 120; #长连接超时时间，单位是秒
+
+            #FastCGI相关参数是为了改善网站的性能：减少资源占用，提高访问速度。下面参数看字面意思都能理解。
+            fastcgi_connect_timeout 300;
+            fastcgi_send_timeout 300;
+            fastcgi_read_timeout 300;
+            fastcgi_buffer_size 64k;
+            fastcgi_buffers 4 64k;
+            fastcgi_busy_buffers_size 128k;
+            fastcgi_temp_file_write_size 128k;
+
+            #gzip模块设置
+            gzip on; #开启gzip压缩输出
+            gzip_min_length 1k; #最小压缩文件大小
+            gzip_buffers 4 16k; #压缩缓冲区
+            gzip_http_version 1.0; #压缩版本（默认1.1，前端如果是squid2.5请使用1.0）
+            gzip_comp_level 2; #压缩等级
+            gzip_types text/plain application/x-javascript text/css application/xml;
+            #压缩类型，默认就已经包含text/html，所以下面就不用再写了，写上去也不会有问题，但是会有一个warn。
+            gzip_vary on;
+            #limit_zone crawler $binary_remote_addr 10m; #开启限制IP连接数的时候需要使用
+
+            upstream blog.ha97.com {
+            #upstream的负载均衡，weight是权重，可以根据机器配置定义权重。weigth参数表示权值，权值越高被分配到的几率越大。
+            server 192.168.80.121:80 weight=3;
+            server 192.168.80.122:80 weight=2;
+            server 192.168.80.123:80 weight=3;
+            }
+            #虚拟主机的配置
+            server {
+            #监听端口
+            listen 80;
+            #域名可以有多个，用空格隔开
+            server_name www.***.com ***.com;
+            index index.html index.htm index.php;
+            #表示在这整个server虚拟主机内，全部的root web根目录。注意要和locate {}下面定义的区分开来
+            root /data/www/***;
+            location /mp/ {
+            proxy_pass http://127.0.0.1:8080;
+            proxy_set_header Host $host;
+            }
+            location / {
+            proxy_pass http://192.168.200.248:80;
+            proxy_set_header Host $host;
+            }
+            add_header Access-Control-Allow-Origin "*";
+            }
+            }
+            复制代码
+
+
+
+
+            后期补充nginx负载均衡和反向代理的详解。
+
+            nginx常用命令
+
+            启动nginx：
+
+            sudo nginx
+            判断配置文件是否正确
+
+            sudo nginx -t
+            停止nginx：
+
+            sudo nginx -s stop
+            重启nginx：
+
+            sudo nginx -s reload
+            执着而坚韧的蜗牛,求知于珠海,在通往理想的道路上披荆砍刺,瘦小的身躯蕴含着独特的思维和丰富的表达.在思索中洞悉IT世界的变化.从意气风发的学生会成员到渐渐成熟的IT职业人,我准备好了,跟着我的心灵深处的渴望一起去创造IT神话!
+            分类: Linux
+            标签: nginx, linxu
+            好文要顶 关注我 收藏该文
+            0
+            « 上一篇：开启远程MySQL
+            posted @ 2017-12-09 16:56 Mr.韦淋 阅读(6241) 评论(0) 编辑 收藏
+            注册用户登录后才能发表评论，请 登录 或 注册，访问网站首页。
+            公告
+            我是一名文科攻城狮
+            ==福利推荐==
+            AdF.ly -缩短网址、并且可赚钱！
+            昵称：Mr.韦淋
+            园龄：6年1个月
+            粉丝：8
+            关注：2
+            +加关注
+            搜索
+
+            常用链接
+            我的随笔
+            我的评论
+            我的参与
+            最新评论
+            我的标签
+            我的标签
+            酒店发展(8)
+            酒店技术(8)
+            未来酒店(8)
+            未来酒店线上发展(8)
+            树莓派(7)
+            PHP(3)
+            酒店管理系统(3)
+            lnmp(3)
+            mysql(2)
+            nginx(1)
+            更多
+            随笔分类(32)
+            javascript(3)
+            Linux(11)
+            Mysql(3)
+            PHP(6)
+            Python
+            work(9)
+            相册(8)
+            work(1)
+            树莓派(7)
+            最新评论
+            1. Re:php 微信支付 回调通知不停的坑
+            还是不行啊 我都把网上的方法试了一万遍了 就是无法让微信停止通知我快心态爆炸了
+            --senya冉
+            2. Re:Windows环境下使用强大的wget工具
+            老大，请问使用“wget -r -p -k -np -nc -e robots=off”语句时，
+            下载的路径是什么？
+            我设置了Path,
+            但指定文件夹中没有任何文件啊。
+            --宸少凌
+            3. Re:Windows环境下使用强大的wget工具
+            请问这网址有2个文件，如何配置呢？搞不懂啊
+            --我的锅
+            4. Re:无刷新读取数据库 (ajax)
+            Uncaught TypeError: Cannot read property 'getElementsByTagName' of null
+            --tom&luo
+            5. Re:从史上八大MySQL事故中学到的经验
+            支持支持
+            --牛腩
+            阅读排行榜
+            1. Windows环境下使用强大的wget工具(32643)
+            2. 树莓派-解决apt-get upgrade速度慢的方法[更换阿里云源](7853)
+            3. mac下配置nginx(6241)
+            4. ThinkPHP实现定时任务(5551)
+            5. 树莓派-基于aria2实现离线下载(4885)
+            推荐排行榜
+            1. Windows环境下使用强大的wget工具(3)
+            2. 常用SQL语句大全总结(1)
+            3. 从史上八大MySQL事故中学到的经验(1)
+            4. 开启远程MySQL(1)
+            5. asp.net获取服务端和客户端信息(1)
+            Copyright ©2019 Mr.韦淋
+        </div>
+        <div class="pages">
+            <div class="left">
+                <div class="pre">
+                    <div>
+                        <img src="./assets/img/pageleft.png" alt="">
+                        <p>上一章</p>
+                    </div>
+                </div>
+                <div class="pre">
+                    <div>
+                        <img src="./assets/img/pageleft2.png" alt="">
+                        <p>上一页</p>
+                    </div>
+                </div>
+            </div>
+            <div class="center">
+                <div class='ml'>
+                    目录
+                </div>
+            </div>
+            <div class="right">
+                <div class="next">
+                    <div>
+                        <img src="./assets/img/pageright2.png" alt="">
+                        <p>下一页</p>
+                    </div>
+                </div>
+                <div class="next">
+
+                    <div>
+                        <img src="./assets/img/pageright.png" alt="">
+                        <p>下一章</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ======================================================================================== -->
+    <div class='modal' id='registerModal' style="height:3rem;margin-top:-1.5rem">
+        <div class='modal-header'>
+            <img class='headerImg' src='./assets/img/register_header.png' alt='' />
+            <div class='close'>
+                <img src='./assets/img/close.svg' alt='close' />
+            </div>
+        </div>
+        <div class='modal-body first' id='register'>
+            <div class='form'>
+                <form>
+                    <div class='formItem'>
+                        <div class='formLable'>
+                            用户名:
+                        </div>
+                        <div class='formInput'>
+                            <input name='user' />
+                        </div>
+                    </div>
+                    <div class='formItem'>
+                        <div class='formLable'>
+                            密码:
+                        </div>
+                        <div class='formInput'>
+                            <input name='password' type='password' />
+                        </div>
+                    </div>
+                    <div class='formItem'>
+                        <div class='formLable'>
+                            确认密码:
+                        </div>
+                        <div class='formInput'>
+                            <input name='comfir_password' type='password' />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class='btn'>
+                <span class='btn-regis' id='registerBtn'>注册</span>
+                <span class='btn-has' id='hasAccout'>已有账号</span>
+            </div>
+        </div>
+        <div class='modal-body' id='registerSuccess'>
+            <div class='hintSpan'> 恭喜注册成功 </div>
+            <div class='btn'>
+                <span class='btn-regis'>登录</span>
+            </div>
+        </div>
+    </div>
+
+    <div class='modal' id='loginModal' style="height:2.5rem;margin-top:-1.5rem">
+        <div class='modal-header'>
+            <img class='headerImg' src='./assets/img/logins_header.png' alt='' />
+            <div class='close'>
+                <img src='./assets/img/close.svg' alt='close' />
+            </div>
+        </div>
+        <div class='modal-body first'>
+            <div class='form'>
+                <form>
+                    <div class='formItem'>
+                        <div class='formLable'>
+                            用户名:
+                        </div>
+                        <div class='formInput'>
+                            <input name='user' />
+                        </div>
+                    </div>
+                    <div class='formItem'>
+                        <div class='formLable'>
+                            密码:
+                        </div>
+                        <div class='formInput'>
+                            <input name='password' type='password' />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class='btn'>
+                <span class='btn-regis' id='loginBtn'>登录</span>
+                <span class='btn-has'>忘记密码</span>
+            </div>
+        </div>
+        <div class='modal-body' id='loginError'>
+            <div class='loginsSpan'>
+                <img src='./assets/img/login_error.png' alt='' />
+                <p class='span'>请点击任何一处重试或找回您的密码</p>
+                <span class='findPassword'> 忘记密码 </span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
