@@ -93,7 +93,7 @@ $(function(){
         $('.fontSizeSetting').eq(type-1).addClass('active').siblings().removeClass('active');
         window.localStorage.setItem('$bookType',type)
     }
-    
+     
     function shows(val){
         if(val){
             hideBack();
