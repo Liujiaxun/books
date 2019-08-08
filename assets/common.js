@@ -31,6 +31,7 @@
             tid = setTimeout(refreshRem, 300);
         }
     }, false);
+
     if (doc.readyState === "complete") {
         doc.body.style.fontSize = "16px";
     } else {
@@ -66,6 +67,10 @@ $(function(){
         // 如果需要分页器
         pagination: {
           el: '.swiper-pagination',
+        },
+        speed:500,
+        autoplay : {
+            delay:5000
         },
     });
     new Swiper ('.hots', {
