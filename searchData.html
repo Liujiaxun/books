@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>小说区</title>
+    <title>搜索结果</title>
     <link rel="stylesheet" href="./assets/style/swiper.min.css">
     <link rel="stylesheet" href="./assets/style/global.min.css?v=11">
     <script src='./assets/js/jq.js'></script>
@@ -18,6 +18,9 @@
         <div class='headerMenu'>
             <div class='menu' id='menuBtn' status="false">
                 <img src='./assets/img/menu.svg' alt='' />
+            </div>
+            <div class="search" id="searchBtn">
+                <img src="./assets/img/search.png" alt="">
             </div>
         </div>
         <div class='headerLogo'>
@@ -48,69 +51,135 @@
         </div>
         <div class='back' id='back'></div>
     </header>
-    <!-- ======================================================================================== -->
-    <div class="app-book">
-        <div class="book-title">
-            <div class="item">
-                <a href="">
-                    <img src="./assets/img/book1.png" alt="">
-                </a>
-            </div>
-            <div class="item">
-                <a href="">
-                    <img src="./assets/img/book2.png" alt="">
-                </a>
-            </div>
-            <div class="item">
-                <a href="">
-                    <img src="./assets/img/book3.png" alt="">
-                </a>
-            </div>
-            <div class="item">
-                <a href="">
-                    <img src="./assets/img/book4.png" alt="">
-                </a>
+    <div class="SeacrchBar" id="SeacrchBar">
+        <div class="searchInputBox">
+            <div class="boxInput">
+                <form action="" id="searchForm">
+                    <input type="text" placeholder="请输入">
+                    <span class="searchBtns" id="searchSubmitBtn"> </span>
+                </form>
             </div>
         </div>
-        <div class="hotBook">
-            <div class="hot-title">
-                <img src="./assets/img/hot.png" alt=""> 热门小说
+        <div class="searchHotBox">
+            <div>
+                <a href="">
+                    性感贴图
+                </a>
+                <a href="">
+                    性感贴图2
+                </a>
             </div>
-            <div class='item-book'>
-                <a href="./bookitem.html">
-                <div class="book">
-                    <div class="book-thumb">
-                        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562585266277&di=b36ec8ae377999461c7d8ed972a18c57&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201511%2F29%2F20151129222447_B83WG.jpeg"
-                            alt="">
-                    </div>
-                    <div class="book-info">
-                        <div class="name">
-                            上课不要看小说：王大明，你爸爸呗溶解了
-                        </div>
-                        <div class="type">九把刀的书籍</div>
-                        <div class="author">
-                            <div class="left">
-                                作者：
-                            </div>
-                            <div class="right">
-                                九把刀，Blaze Wu
-                            </div>
-                        </div>
-                        <div class="desc">
-                            <div class="left">
-                                简介：
-                            </div>
-                            <div class="right">
-                                简介：九把刀，Blaze Wu
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div>
+                <a href="">
+                    性感贴图1
+                </a>
+                <a href="">
+                    性感贴图3
+                </a>
+            </div>
+            <div>
+                <a href="">
+                    性感贴图1
+                </a>
+                <a href="">
+                    性感贴图4
+                </a>
+            </div>
+            <div>
+                <a href="">
+                    性感贴图
+                </a>
+                <a href="">
+                    性感贴图5
                 </a>
             </div>
         </div>
     </div>
-    <!-- ======================================================================================== -->
+    <div class="swiper-container" id='banner'>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <a class='banner-slide' href=''>
+                    <img src="http://demo.lanrenzhijia.com/demo/71/7105/demo/img/6108b580.jpg" alt="">
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a class='banner-slide' href=''>
+                    <img src="http://demo.lanrenzhijia.com/demo/71/7105/demo/img/photo-1415356838286-df6fd593e8b3.jpg"
+                        alt="">
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a class='banner-slide' href=''>
+                    <img src="http://demo.lanrenzhijia.com/demo/71/7105/demo/img/JaI1BywIT5Or8Jfmci1E_zakopane.jpg"
+                        alt="">
+                </a>
+            </div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+    </div>
+    <div class="taskBar">
+        <p>好消息，好消息1好消息，好消息1好消息，好消息1好消息，好消息1息，好消息1好消息，好消息1好消息，好消息1息，好消息1好消息，好消息1好消息，好消息1 end</p>
+        <p>好消息，好消息2</p>
+    </div>
+    <div class='bars'>
+        <a href='./book.html' class='bars-item'>
+            <div class='bars-icon sm'>
+                <img src='./assets/img/book.png' alt='' />
+            </div>
+            <div class='bars-name'>
+                小说
+            </div>
+        </a>
+        <a href='./pic.html' class='bars-item'>
+            <div class='bars-icon'>
+                <img src='./assets/img/pic.png' alt='' />
+            </div>
+            <div class='bars-name'>
+                漫画
+            </div>
+        </a>
+        <a href='./mappic.html' class='bars-item'>
+            <div class='bars-icon'>
+                <img src='./assets/img/picm.png' alt='' />
+            </div>
+            <div class='bars-name'>
+                贴图
+            </div>
+        </a>
+    </div>
+    <div class="searchtitles">
+        搜索结果...
+    </div>
+    <div class="searchData">
+        <div class="items">
+            <a>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562585266277&di=b36ec8ae377999461c7d8ed972a18c57&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201511%2F29%2F20151129222447_B83WG.jpeg" alt="">
+                <p>奇幻 1</p>
+            </a>
+        </div>
+        <div class="items">
+            <a>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562585266277&di=b36ec8ae377999461c7d8ed972a18c57&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201511%2F29%2F20151129222447_B83WG.jpeg" alt="">
+
+                <p>奇幻 1</p>
+            </a>
+        </div>
+        <div class="items">
+            <a>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562585266277&di=b36ec8ae377999461c7d8ed972a18c57&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201511%2F29%2F20151129222447_B83WG.jpeg" alt="">
+
+                <p>奇幻 1</p>
+            </a>
+        </div>
+        <div class="items">
+            <a>
+              <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562585266277&di=b36ec8ae377999461c7d8ed972a18c57&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201511%2F29%2F20151129222447_B83WG.jpeg" alt="">
+            <p>奇幻 1</p>
+            </a>
+        </div>
+    </div>
+
     <div class='modal' id='registerModal' style="height:3rem;margin-top:-1.5rem">
         <div class='modal-header'>
             <img class='headerImg' src='./assets/img/register_header.png' alt='' />
@@ -159,30 +228,6 @@
             </div>
         </div>
     </div>
-    <!-- 翻页 start -->
-    <div class='pageBars'>
-        <div class="pre">
-            <a href="">
-                <img src="./assets/img/pl.png" alt="">
-                <p>上一页</p>
-            </a>
-        </div>
-        <div class="center">
-            <a href> 1 </a>
-            <a href class="active"> 2 </a>
-            <a href class=""> 3 </a>
-            <a href> 4 </a>
-            <a href> 5 </a>
-            <a href> 6 </a>
-        </div>
-        <div class="next">
-            <a href="">
-                <img src="./assets/img/pr.png" alt="">
-                <p>下一页</p>
-            </a>
-        </div>
-    </div>
-    <!-- 翻页 end -->
 
     <div class='modal' id='loginModal' style="height:2.5rem;margin-top:-1.5rem">
         <div class='modal-header'>
@@ -225,6 +270,23 @@
             </div>
         </div>
     </div>
+
+    <!--    广告-->
+    <div id="gg1" class="gg" style="width: 1.2rem;height: 1.5rem;position: fixed;bottom:.07rem;z-index: 200;right: .05rem">
+        <a href="" style="display: inline-block;width: 100%;height: 100%">
+            <img src="./assets/img/m1.gif" alt="" style="width: 100%;">
+        </a>
+        <span style="width: .2rem;height: .2rem;display: inline-block;z-index:201;position: absolute;opacity:.4;top:0;right:.1rem;background: url('./assets/img/close2.svg');background-size:100% 100%; "></span>
+    </div>
+    <script>
+        $(function(){
+            $('#gg1 span').click(function(){
+                $('#gg1').fadeOut();
+            })
+        })
+    </script>
+    <!--    广告-->
+
 </body>
 
 </html>

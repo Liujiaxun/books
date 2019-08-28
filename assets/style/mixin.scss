@@ -20,7 +20,7 @@
     overflow : hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 4; 
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
 }
 @mixin overtext {
@@ -34,7 +34,7 @@
     justify-content: flex-end;
 }
 @function calcRem($val){
-    @return calc(100%-$val) + rem 
+    @return calc(100%-$val) + rem
 }
 
 
@@ -48,4 +48,7 @@ $f18: px2rem(18);
 $padding: px2rem(36);
 $padding2: px2rem(24);
 $headerH: px2rem(115);
+
+$searchH: 235;
+
 
